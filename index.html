@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muneeb Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: whitesmoke;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+
+
+        }
+
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.980);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 65px;
+            background-color: white;
+
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 22px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: large;
+
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            color: rgb(175, 175, 175);
+
+        }
+
+        .left {
+            font-size: 1.3em;
+            font-weight: 600;
+
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 140px 0;
+            height: 100%;
+
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: absolute;
+            left: 30px;
+            top: 42%;
+            transform: translateY(-15%);
+        }
+
+        .social-icon img {
+            width: 40px;
+            height: auto;
+            border-radius: 10%;
+        }
+
+        .leftsection {
+
+            width: 30%;
+            font-size: 300%;
+            font-weight: 600;
+            margin: 60px;
+            white-space: nowrap;
+        }
+
+        .leftsection .name {
+            font-weight: 600;
+        }
+
+        .leftsection .intro {
+
+            font-size: 37%;
+            font-weight: bold;
+            color: grey;
+
+        }
+
+        .leftsection .detail {
+            font-size: 30%;
+            font-weight: 100;
+            color: grey;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .leftsection .btn {
+            padding: 12px;
+            background-color: #6a59d1;
+            color: white;
+            border: 1px solid;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .leftsection .btn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .rightsection img {
+
+            width: 85%;
+
+        }
+
+        /* #element {
+            color: blueviolet;
+        } */
+        .scroll-down {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+            cursor: pointer;
+        }
+
+        .secondsection {
+            max-width: 80vmax;
+            margin: auto;
+            text-align: left;
+            padding-top: 80px;
+            margin-bottom: 50px;
+            margin-top: -40px;
+        }
+
+        .study-color {
+            color: grey;
+
+        }
+
+        .secondsection h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+            margin-top: -4px;
+        }
+
+        .box {
+            background-color: whitesmoke;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+        }
+
+        .vertical {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .img-top {
+            width: 80px;
+            margin-top: -30px;
+        }
+
+        .vertical-title {
+            font-size: 12px;
+            font-weight: 600;
+
+        }
+
+        .vertical-title span {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .vertical-desc {
+            color: grey;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+
+        .thirdsection {
+            max-width: 80vmax;
+            margin: auto;
+            text-align: left;
+            margin-bottom: 80px;
+            margin-top: -30px;
+        }
+
+        .certificate-color {
+            color: grey;
+        }
+
+        .thirdsection h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+            margin-top: -4px;
+        }
+
+        .Certificate {
+            background-color: whitesmoke;
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .Certificate-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 20px;
+            width: 48%;
+        }
+
+        .img {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+        .certificate-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .certificate-title span {
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .certificate-desc {
+            color: grey;
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 20px;
+        }
+
+        .forthsection {
+            max-width: 80vmax;
+            margin: auto;
+            text-align: left;
+            margin-bottom: 80px;
+            margin-top: -30px;
+        }
+
+        .experience-color {
+            color: grey;
+        }
+
+        .forthsection h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+            margin-top: -4px;
+        }
+
+        .experience {
+            background-color: whitesmoke;
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .experience-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 20px;
+            width: 48%;
+        }
+
+        .img {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+        .experience-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .experience-title span {
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .experience-desc {
+            color: grey;
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 20px;
+        }
+
+        .skillsection {
+            max-width: 80vmax;
+            margin: auto;
+            text-align: left;
+            padding-top: 80px;
+            margin-bottom: 50px;
+            margin-top: -40px;
+        }
+
+        .skill-color {
+            color: grey;
+
+        }
+
+        .skillsection h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+            margin-top: -4px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: center;
+            grid-gap: 2rem;
+            padding: 1rem 40px;
+            font-size: 1.2rem;
+        }
+
+        .skill-box {
+            padding: 1rem;
+            font-size: 0.7rem;
+            cursor: pointer;
+            text-align: center;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-box:hover .skill-img {
+            transform: translateY(-10px);
+        }
+
+        .skill-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            color: black;
+            position: relative;
+        }
+
+        .skill-title h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .skill-box p {
+            color: grey;
+            text-align: left;
+            margin-top: auto;
+        }
+
+        .skill-img {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            border-radius: 20px;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+        }
+
+        .icons {
+            width: 60px;
+            height: 60px;
+        }
+
+        footer {
+            background-color: #6a59d1;
+            /* height: 233px; */
+
+        }
+
+        .footer {
+
+            display: flex;
+            padding: 23px 120px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 230px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: white;
+            padding: 12px 0;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="fixed-nav">
+            <div class="left">Muneeb's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#firstsection">Home</a></li>
+                    <li><a href="#secondsection">About</a></li>
+                    <li><a href="#fifthsection">Skills</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="firstsection" id="firstsection">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/muneeb.ahmad993" class="social-icon"><img src="facebook.png"
+                        alt="Facebook"></a>
+                <a href="https://www.instagram.com/muneebahmad616/" class="social-icon"><img src="twitter-X.png"
+                        alt="Twitter"></a>
+                <a href="https://twitter.com/MuneebA10767663" class="social-icon"><img src="insta.png"
+                        alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/muneeb-ahmad616/" class="social-icon"><img src="LinkedIn.png"
+                        alt="Instagram"></a>
+            </div>
+            <div class="leftsection">
+                Hi, I am <span class="name">Muneeb Ahmad</span>
+                <span id="element"></span>
+                <div class="intro"> Front-end Developer </div>
+                <span class="detail">I'm a Front-End Developer, Create captivating websites for your business.</span>
+                <span class="detail">My expertise includes precise software documentation, </span>
+                <span class="detail"> and sharp requirement analysis.</span>
+                <span class="detail"> I bring precision to every project, ensuring exceptional results.</span>
+                <div class="buttons">
+                    <button class="btn"><a href="Muneeb Ahmad.docx">Download Resume</a></button>
+                    <button class="btn"><a href="https://github.com/muneebahma616">Visit Github</a></button>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="home.png" alt="">
+            </div>
+            <a href="#secondsection" class="scroll-down">Scroll Down &darr; </a>
+        </section>
+        <!-- <hr> -->
+        <section class="secondsection" id="secondsection">
+            <span class="study-color">What I have Studied so far</span>
+            <h1>Education</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="img-top" src="School.png" alt="">
+                    <div class="vertical-title">
+                        Metric (SSC)
+                        <span>(2018)</span>
+                    </div>
+                    <div class="vertical-desc">
+                        I have completed my Matriculation in the year 2018 from Govt.School Township D1. I passed my
+                        matric with 1st division from Bise Lahore.
+                    </div>
+                    <div class="vertical">
+                        <img class="img-top" src="PGC.png" alt="">
+                        <div class="vertical-title">
+                            Intermediate
+                            <span>(2018-2020)</span>
+                        </div>
+                        <div class="vertical-desc">
+                            I have done my Intermediate from Punjab Group of colleges. Due to the pandemic exam of my
+                            2nd year can't be held so i passed it with C grade.
+                        </div>
+                        <div class="vertical">
+                            <img class="img-top" src="UCP.png" alt="">
+                            <div class="vertical-title">
+                                Graduation
+                                <span>(2020-2024)</span>
+                            </div>
+                            <div class="vertical-desc">
+                                I am doing my Graduation in Software Engineering from UCP right now my CGPA is 3.15.
+                            </div>
+                        </div>
+        </section>
+        <!-- <hr> -->
+
+        <section class="thirdsection">
+            <span class="certificate-color">Certifications I Have Done</span>
+            <h1>Certificates</h1>
+            <div class="Certificate">
+                <div class="Certificate-div">
+                    <a href="Yeaster Certificates.zip"> <img class="img" src="Yeaster.png" alt=""></a>
+                    <div class="certificate-title">
+                        Yeaster Certifications
+                        <span>(2022-2024)</span>
+                    </div>
+                    <div class="certificate-desc">
+                        I am certified Yeaster Technician and certified cloud associate in the summer break of 2022. I
+                        have these Certifications to get more skills in IT.
+                    </div>
+                </div>
+                <div class="Certificate-div">
+                    <a href="Fortinet Certificates.zip"> <img class="img" src="Fortinet.png" alt=""> </a>
+                    <div class="certificate-title">
+                        Fortinet Certifications
+                        <span>(2022-2024)</span>
+                    </div>
+                    <div class="certificate-desc">
+                        To gain skills in network security, I have completed Fortinet Certifications for Network
+                        Security Associate, NSE1, NSE2, and NSE3.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <hr> -->
+        <section class="forthsection">
+            <span class="experience-color">Experience I have</span>
+            <h1>Experience</h1>
+            <div class="experiencer">
+                <div class="experience-div">
+                    <a href="https://zrsintl.com/"> <img class="img" src="ZRS.png" alt=""></a>
+                    <div class="experience-title">
+                        Sales Executive
+                        <span>(2022-2023)</span>
+                    </div>
+                    <div class="experience-desc">
+                        I am working at ZRS International LLC since 2022 till now
+                    </div>
+        </section>
+        <!-- <hr> -->
+
+
+        <section class="skillsection" id="fifthsection">
+            <span class="skill-color">These are some of my skills that represent my expertise.</span>
+            <h1>Skills</h1>
+            <div class="container">
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="html.png" class="icons">
+                        </div>
+                        <h3>HTML</h3>
+                    </div>
+                    <p> I have a strong command of HTML, with a proficiency level of 90%. This means I can create
+                        structured and semantically meaningful web pages efficiently. HTML is the foundation of web
+                        development, and I'm well-versed in its core concepts and best practices.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="css.png" class="icons">
+                        </div>
+                        <h3>CSS</h3>
+                    </div>
+                    <p>I have a good command at CSS. This allows me to style web pages beautifully and responsively. I
+                        can create visually appealing designs, manage layouts, and ensure a consistent user experience
+                        across different devices.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="js.png" class="icons">
+                        </div>
+                        <h3>Javascript</h3>
+                    </div>
+                    <p>I'm proficient in JavaScript, This enables me to add interactivity and dynamic behavior to
+                        websites. I can create client-side scripts, handle user events, and work with libraries and
+                        frameworks to build feature-rich web applications.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="db-sql.png" class="icons">
+                        </div>
+                        <h3>Database</h3>
+                    </div>
+                    <p>I possess the expertise needed for effective database management. This includes the design,
+                        querying, and efficient management of databases. I have experience in handling SQL databases,
+                        guaranteeing data integrity and optimizing data retrieval processes.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="php.png" class="icons">
+                        </div>
+                        <h3>PHP</h3>
+                    </div>
+                    <p>My PHP skills are not that good, but i can understand and know basic of PHP. I can use it to
+                        create dynamic web pages and web applications. I'm familiar with PHP frameworks and can build
+                        robust back-end systems.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="sdlc.png" class="icons">
+                        </div>
+                        <h3>SDLC</h3>
+                    </div>
+                    <p> I'm well-versed in SDLC practices. I understand the entire software development process, from
+                        requirements gathering to deployment. I can choose and implement appropriate methodologies to
+                        ensure project success.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="uml.png" class="icons">
+                        </div>
+                        <h3>UML</h3>
+                    </div>
+                    <p>I have a strong proficiency in UML. UML allows me to create visual models of software systems,
+                        making it easier to design and communicate complex software architectures.</p>
+                </div>
+
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="skill-img">
+                            <img src="Analyst.png" class="icons">
+                        </div>
+                        <h3>Requirement analyst</h3>
+                    </div>
+                    <p> As a requirement analyst, I excel at gathering, documenting, and analyzing project requirements.
+                        My expertise ensures that software projects start with a clear understanding of stakeholder
+                        needs, leading to successful outcomes.</p>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first"></div>
+            <h3> Muneeb's Portfolio</h3>
+            <div class="footer-second">
+                <ul>
+                    <li>Home </li>
+                    <li>About </li>
+                    <li>Services</li>
+                    <li>Contact </li>
+
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home </li>
+                    <li>About </li>
+                    <li>Services</li>
+                    <li>Contact </li>
+
+                </ul>
+            </div>
+            <div class="footer-forth">
+                <ul>
+                    <li>Home </li>
+                    <li>About </li>
+                    <li>Services</li>
+                    <li>Contact </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169 Muneeb Ahmad | All rights reserved.
+        </div>
+    </footer>
+
+    <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Front-end', ' Documentation Specialist', 'Requirement analyst'],
+            typeSpeed: 30,
+        }); -->
+    </script>
+    <script>
+        document.querySelectorAll('a[href^="#firstsection"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = 140;
+                const scrollSpeed = 650;
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
