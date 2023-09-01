@@ -688,9 +688,11 @@
             padding: 23px 120px;
             justify-content: space-around;
         }
-        .footer-first h3{
+
+        .footer-first h3 {
             font-size: 21px;
         }
+
         footer .side {
             color: white;
             font-size: 13px;
@@ -756,6 +758,23 @@
         .fa-instagram {
             padding: 15px;
             color: white;
+        }
+
+        a[href^="mailto"] {
+            color: black;
+            text-decoration: none;
+         
+        }
+
+        a[href^="tel"] {
+            color: black;
+            text-decoration: none;
+          
+        }
+
+        a[href^="mailto"]:hover,
+        a[href^="tel"]:hover {
+            text-decoration: underline;
         }
 
         footer .footer-rights {
@@ -1109,7 +1128,7 @@
                     <ul class="contact-list">
                         <li>
                             <h3><i class="fas fa-phone"></i>Phone</h3>
-                            <span>+92 326 9487179</span>
+                            <span><a href="telto:+923269487179">+92 326 9487179</a></span>
                         </li>
                         <li>
                             <h3><i class="fas fa-envelope"></i>Email Address</h3>
