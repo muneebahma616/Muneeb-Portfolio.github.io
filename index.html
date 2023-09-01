@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <title>Muneeb Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -432,33 +435,333 @@
             height: 60px;
         }
 
+        .project-section {
+            max-width: 80vmax;
+            margin: auto;
+            text-align: left;
+            padding-top: 80px;
+            margin-bottom: 50px;
+            margin-top: -40px;
+        }
+
+        .project-color {
+            color: grey;
+
+        }
+
+        .project-section h1 {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+            margin-top: -4px;
+        }
+
+        .project-info {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            height: 50%;
+            width: 100%;
+            margin-top: -10px;
+            transform: translate(-50%, -50%);
+            background-color: rgba(148, 144, 144, 0.5);
+            color: black;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+            width: 250px;
+            height: auto;
+            transition: opacity 0.3s, visibility 0.5s;
+        }
+
+        .project:hover .project-info {
+            display: block;
+        }
+
+        .download-button {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .download-button a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #6a59d1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project:hover .download-button {
+            display: block;
+        }
+
+        .project-detail {
+
+            margin-top: 80px;
+            font-size: 14px;
+        }
+
+        .project {
+            position: relative;
+            display: inline-block;
+            margin: 55px;
+            margin-bottom: -40px;
+        }
+
+        .project-image {
+            width: 250px;
+            height: 350px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .project:hover .project-image img {
+            opacity: 0.7;
+        }
+
+        .project-details {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project:hover .project-details {
+            opacity: 1;
+        }
+
+        .project-details h3 {
+            font-size: 1.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+            text-align: center;
+        }
+
+        .project:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-overlay .project-detail {
+            font-size: 1rem;
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .contact-section {
+            background-color: #f4f4f4;
+            padding-top: 80px;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-left {
+            width: 45%;
+            text-align: left;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .contact-left h2 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+        }
+
+        .contact-list h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .contact-list i {
+            margin-right: 10px;
+            font-size: 24px;
+            color: #6a59d1;
+        }
+
+        .contact-right {
+            width: 45%;
+            text-align: left;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .contact-right p {
+            font-size: 18px;
+            color: #666;
+            padding-top: -40px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #6a59d1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #5548aa;
+        }
+
         footer {
             background-color: #6a59d1;
-            /* height: 233px; */
-
+            height: 230px;
         }
 
         .footer {
-
             display: flex;
             padding: 23px 120px;
-            justify-content: space-evenly;
+            justify-content: space-around;
+        }
+        .footer-first h3{
+            font-size: 21px;
+        }
+        footer .side {
+            color: white;
+            font-size: 13px;
         }
 
-        .footer ul {
+        .footer li {
+            margin-top: 25px;
             list-style: none;
+        }
+
+        .footer li a {
+            color: white;
+            text-decoration: none;
         }
 
         .footer>div {
             width: 230px;
         }
 
+        .footer-second span {
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .footer-second ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .footer-second ul li {
+            margin: 0;
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .footer-third span {
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            margin-left: 70px;
+            vertical-align: middle;
+        }
+
+        .footer-third .social {
+            font-size: 30px;
+            vertical-align: middle;
+            margin-top: 5px;
+            margin-left: 40px;
+        }
+
+        .fa-facebook {
+            color: white;
+        }
+
+        .fa-twitter {
+            color: white;
+        }
+
+        .fa-instagram {
+            padding: 15px;
+            color: white;
+        }
+
         footer .footer-rights {
             text-align: center;
             color: white;
             padding: 12px 0;
-
-
         }
     </style>
 </head>
@@ -472,8 +775,8 @@
                     <li><a href="#firstsection">Home</a></li>
                     <li><a href="#secondsection">About</a></li>
                     <li><a href="#fifthsection">Skills</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#sixthsection">Projects</a></li>
+                    <li><a href="#seventhsection">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -494,7 +797,7 @@
             </div>
             <div class="leftsection">
                 Hi, I am <span class="name">Muneeb Ahmad</span>
-                <span id="element"></span>
+
                 <div class="intro"> Front-end Developer </div>
                 <span class="detail">I'm a Front-End Developer, Create captivating websites for your business.</span>
                 <span class="detail">My expertise includes precise software documentation, </span>
@@ -694,59 +997,174 @@
                         needs, leading to successful outcomes.</p>
                 </div>
             </div>
-
-
-
         </section>
 
 
+        <section class="project-section" id="sixthsection">
+            <span class="project-color">Projects I have done previously</span>
+            <h1>Projects</h1>
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p class="project-detail">
+                        A brief description of Project 1. Explain what the project does, its goals, and technologies
+                        used.
+                    </p>
+                    <div class="download-button">
+                        <a href="Project1.zip" download>Download</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="project1.png" alt="">
+                </div>
+            </div>
 
+        </section>
+
+        <section class="contact-section" id="seventhsection">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <h2>Contact Me</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <h3><i class="fas fa-phone"></i>Phone</h3>
+                            <span>+92 326 9487179</span>
+                        </li>
+                        <li>
+                            <h3><i class="fas fa-envelope"></i>Email Address</h3>
+                            <span><a href="mailto:Muneebahmad0317@gmail.com">Muneebahmad0317@gmail.com</a></span>
+                        </li>
+                        <li>
+                            <h3><i class="fas fa-map-marker-alt"></i>Official Address</h3>
+                            <span> C Block New Garden Town, Lahore, Pakistan.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-right">
+                    <p>I'm always here for you.</p>
+                    <form action="" class="contact-form">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Subject">
+                        <textarea name="message" rows="7" placeholder="Message"></textarea>
+                        <button class="btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer">
-            <div class="footer-first"></div>
-            <h3> Muneeb's Portfolio</h3>
+            <div class="footer-first">
+                <h3>Muneeb's Portfolio</h3>
+                <div class="side">Front-end Developer</div>
+                <li><a href="#secondsection">About Me</a></li>
+            </div>
+
             <div class="footer-second">
                 <ul>
-                    <li>Home </li>
-                    <li>About </li>
-                    <li>Services</li>
-                    <li>Contact </li>
+                    <span> More</span>
+                    <li><a href="#fifthsection">Skills</a></li>
+                    <li><a href="#sixthsection">Projects</a></li>
+                    <li><a href="#seventhsection">Contact</a></li>
 
                 </ul>
             </div>
             <div class="footer-third">
-                <ul>
-                    <li>Home </li>
-                    <li>About </li>
-                    <li>Services</li>
-                    <li>Contact </li>
-
-                </ul>
-            </div>
-            <div class="footer-forth">
-                <ul>
-                    <li>Home </li>
-                    <li>About </li>
-                    <li>Services</li>
-                    <li>Contact </li>
-
-                </ul>
+                <span>Follow</span>
+                <div class="social">
+                    <a href="https://www.facebook.com/muneeb.ahmad993"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/muneebahmad616/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/MuneebA10767663"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-rights">
             Copyright &#169 Muneeb Ahmad | All rights reserved.
         </div>
     </footer>
-
-    <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Front-end', ' Documentation Specialist', 'Requirement analyst'],
-            typeSpeed: 30,
-        }); -->
-    </script>
     <script>
         document.querySelectorAll('a[href^="#firstsection"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
